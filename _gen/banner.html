@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Figtree:wght@400;500&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root{
+    --paper:#F7F6F1; --ink:#16140F; --ink2:#6B655A; --ink3:#9B9488;
+    --accent:#2C3A4F; --hair:#E2DDD0;
+    --serif:'Cormorant Garamond',serif; --sans:'Figtree',sans-serif; --mono:'Geist Mono',monospace;
+  }
+  html,body{ width:1584px; height:396px; background:var(--paper); overflow:hidden; }
+  .banner{
+    width:1584px; height:396px; position:relative;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:0 90px; background:var(--paper);
+  }
+  /* subtle hairline frame */
+  .banner::after{ content:""; position:absolute; inset:24px; border:1px solid var(--hair); pointer-events:none; }
+
+  .left{ position:relative; z-index:2; max-width:760px; }
+  .eyebrow{
+    font-family:var(--mono); font-size:15px; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--ink3); display:flex; align-items:center; gap:14px; margin-bottom:22px;
+  }
+  .eyebrow::before{ content:""; width:30px; height:1px; background:var(--ink3); }
+  .brand{
+    font-family:var(--serif); font-weight:400; font-size:104px; line-height:.92;
+    letter-spacing:-.02em; color:var(--ink);
+  }
+  .brand .dot{ color:var(--accent); }
+  .tagline{
+    font-family:var(--serif); font-style:italic; font-weight:400; font-size:40px;
+    color:var(--accent); margin-top:10px;
+  }
+  .services{
+    font-family:var(--mono); font-size:15px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--ink2); margin-top:26px;
+  }
+
+  /* right: 5 demo thumbnails as a tidy fan of cards */
+  .gallery{ position:relative; z-index:2; display:flex; gap:14px; align-items:center; }
+  .thumb{
+    width:120px; height:200px; border:1px solid var(--hair); border-radius:3px;
+    overflow:hidden; background:#fff; box-shadow:0 6px 18px rgba(22,20,15,.06);
+  }
+  .thumb img{ width:300px; height:auto; }
+</style>
+</head>
+<body>
+  <div class="banner">
+    <div class="left">
+      <div class="eyebrow">Design &amp; development studio · Prague</div>
+      <div class="brand">kdev<span class="dot">.</span>studio</div>
+      <div class="tagline">Websites, built by hand.</div>
+      <div class="services">Landing pages · Online stores · Websites · github.com/KlaosY</div>
+    </div>
+    <div class="gallery">
+      <div class="thumb"><img src="../assets/02-latitude.jpeg" alt=""></div>
+      <div class="thumb"><img src="../assets/04-heater.jpeg" alt=""></div>
+      <div class="thumb"><img src="../assets/05-orbit.jpeg" alt=""></div>
+      <div class="thumb"><img src="../assets/03-sediment.jpeg" alt=""></div>
+      <div class="thumb"><img src="../assets/01-closer.jpeg" alt=""></div>
+    </div>
+  </div>
+</body>
+</html>

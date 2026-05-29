@@ -11,8 +11,7 @@
 
   /* ---- 0. Config you may edit later ---- */
   const CONFIG = {
-    // Заменить на реальный IČO когда будет:
-    ico: null, // например "21345678" — пока null показывает placeholder
+    ico: "19523751", // IČO — отображается в футере
     // Реальные ссылки на соцпрофили (когда появятся):
     socials: {
       linkedin: null,

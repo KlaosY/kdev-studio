@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Figtree:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  :root{
+    --paper:#F7F6F1; --ink:#16140F; --ink2:#6B655A; --ink3:#9B9488;
+    --accent:#2C3A4F; --hair:#E2DDD0;
+    --serif:'Cormorant Garamond',serif; --sans:'Figtree',sans-serif; --mono:'Geist Mono',monospace;
+  }
+  html,body{ width:1280px; height:769px; background:var(--paper); overflow:hidden; }
+  .cover{ width:1280px; height:769px; position:relative; padding:56px 64px; background:var(--paper); }
+  .cover::after{ content:""; position:absolute; inset:24px; border:1px solid var(--hair); pointer-events:none; }
+
+  .top{ display:flex; align-items:center; justify-content:space-between; position:relative; z-index:2; }
+  .badge{ font-family:var(--serif); font-size:30px; color:var(--ink); }
+  .badge .dot{ color:var(--accent); }
+  .tag{ font-family:var(--mono); font-size:14px; letter-spacing:.18em; text-transform:uppercase; color:var(--ink3); }
+
+  .head{ position:relative; z-index:2; margin-top:30px; }
+  .eyebrow{ font-family:var(--mono); font-size:15px; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; }
+  .title{ font-family:var(--serif); font-weight:500; font-size:96px; line-height:.96; letter-spacing:-.02em; color:var(--ink); }
+  .title em{ font-style:italic; color:var(--accent); }
+  .sub{ font-family:var(--sans); font-size:22px; color:var(--ink2); margin-top:14px; }
+
+  /* browser-framed screenshot */
+  .frame{
+    position:absolute; left:64px; right:64px; bottom:56px; height:360px;
+    border:1px solid var(--hair); border-radius:8px; overflow:hidden; background:#fff;
+    box-shadow:0 24px 60px rgba(22,20,15,.12); z-index:2;
+  }
+  .bar{ height:34px; background:#EFEDE4; border-bottom:1px solid var(--hair); display:flex; align-items:center; gap:8px; padding:0 14px; }
+  .bar i{ width:11px; height:11px; border-radius:50%; background:#D4CDBC; display:inline-block; }
+  .bar i:first-child{ background:#C98B7A; }
+  .shot{ width:100%; height:calc(360px - 34px); object-fit:cover; object-position:top center; display:block; }
+</style>
+</head>
+<body>
+  <div class="cover">
+    <div class="top">
+      <div class="badge">kdev<span class="dot">.</span>studio</div>
+      <div class="tag">Hand-coded · Prague</div>
+    </div>
+    <div class="head">
+      <div class="eyebrow" id="eyebrow">Web development</div>
+      <div class="title" id="title">Landing <em>Pages.</em></div>
+      <div class="sub" id="sub">Fast, hand-coded, built to convert.</div>
+    </div>
+    <div class="frame">
+      <div class="bar"><i></i><i></i><i></i></div>
+      <img class="shot" id="shot" src="../assets/01-closer.jpeg" alt="" />
+    </div>
+  </div>
+
+  <script>
+    const variants = {
+      landing: {
+        eyebrow: "Web development",
+        title: 'Landing <em>Pages.</em>',
+        sub: "Fast, hand-coded, built to convert.",
+        shot: "../assets/05-orbit.jpeg",
+      },
+      website: {
+        eyebrow: "Web development",
+        title: 'Custom <em>Websites.</em>',
+        sub: "Multi-page sites, designed and built by hand.",
+        shot: "../assets/03-sediment.jpeg",
+      },
+      store: {
+        eyebrow: "E-commerce",
+        title: 'Online <em>Stores.</em>',
+        sub: "Shopify &amp; custom storefronts that sell.",
+        shot: "../assets/02-latitude.jpeg",
+      },
+    };
+    const v = new URLSearchParams(location.search).get("v") || "landing";
+    const d = variants[v] || variants.landing;
+    document.getElementById("eyebrow").innerHTML = d.eyebrow;
+    document.getElementById("title").innerHTML = d.title;
+    document.getElementById("sub").innerHTML = d.sub;
+    document.getElementById("shot").src = d.shot;
+  </script>
+</body>
+</html>
