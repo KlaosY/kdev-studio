@@ -14,7 +14,7 @@
     ico: "19523751", // IČO — отображается в футере
     // Реальные ссылки на соцпрофили (когда появятся):
     socials: {
-      linkedin: null,
+      linkedin: "https://www.linkedin.com/in/nickolas-rudakov-b6b903413",
       fiverr: null,
       upwork: null,
     },
