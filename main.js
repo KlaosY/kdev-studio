@@ -15,7 +15,7 @@
     // Реальные ссылки на соцпрофили (когда появятся):
     socials: {
       linkedin: "https://www.linkedin.com/in/nickolas-rudakov-b6b903413",
-      fiverr: null,
+      fiverr: "https://www.fiverr.com/kdev_studio",
       upwork: null,
     },
   };
